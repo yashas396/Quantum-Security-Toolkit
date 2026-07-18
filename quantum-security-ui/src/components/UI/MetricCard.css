@@ -1,0 +1,166 @@
+.metric-card {
+  position: relative;
+  min-height: 175px;
+  padding: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+  box-shadow:
+    0 18px 48px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.metric-card:hover {
+  border-color: rgba(124, 226, 255, 0.22);
+  box-shadow:
+    0 24px 58px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(73, 202, 255, 0.07);
+}
+
+.metric-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 14%;
+  width: 72%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+}
+
+.metric-card-glow {
+  position: absolute;
+  right: -45px;
+  bottom: -55px;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.metric-card-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.metric-title {
+  color: rgba(217, 230, 245, 0.62);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.metric-value {
+  margin-top: 18px;
+  color: #f4fbff;
+  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
+.metric-subtitle {
+  margin: auto 0 0;
+  padding-top: 16px;
+  color: rgba(209, 224, 240, 0.56);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* Cyan */
+
+.metric-cyan .metric-card-glow {
+  background: rgba(73, 218, 255, 0.65);
+}
+
+.metric-cyan .metric-value {
+  color: #8cedff;
+}
+
+/* Purple */
+
+.metric-purple .metric-card-glow {
+  background: rgba(157, 107, 255, 0.62);
+}
+
+.metric-purple .metric-value {
+  color: #c5a8ff;
+}
+
+/* Blue */
+
+.metric-blue .metric-card-glow {
+  background: rgba(83, 139, 255, 0.64);
+}
+
+.metric-blue .metric-value {
+  color: #9dc3ff;
+}
+
+/* Green */
+
+.metric-green .metric-card-glow {
+  background: rgba(65, 255, 178, 0.55);
+}
+
+.metric-green .metric-value {
+  color: #82ffc7;
+}
+
+/* Orange */
+
+.metric-orange .metric-card-glow {
+  background: rgba(255, 170, 77, 0.58);
+}
+
+.metric-orange .metric-value {
+  color: #ffc17c;
+}
+
+/* Red */
+
+.metric-red .metric-card-glow {
+  background: rgba(255, 78, 112, 0.62);
+}
+
+.metric-red .metric-value {
+  color: #ff91a8;
+}
+
+@media (max-width: 580px) {
+  .metric-card {
+    min-height: 155px;
+    padding: 20px;
+  }
+
+  .metric-value {
+    font-size: 1.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metric-card {
+    transition: none;
+  }
+}

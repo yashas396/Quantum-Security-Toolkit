@@ -1,0 +1,14 @@
+.app-content {
+  min-height: 100vh;
+  margin-left: 275px;
+  padding: 125px 28px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .app-content {
+    margin-left: 0;
+    padding: 110px 18px 30px;
+  }
+}

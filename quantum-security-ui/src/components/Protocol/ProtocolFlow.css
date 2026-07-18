@@ -1,0 +1,707 @@
+.protocol-flow {
+  position: relative;
+  width: 100%;
+  margin-top: 24px;
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 22px;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(80, 190, 255, 0.08),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.02)
+    );
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.protocol-flow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 14%;
+  width: 72%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(112, 230, 255, 0.55),
+    transparent
+  );
+}
+
+.protocol-heading {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.protocol-kicker {
+  display: block;
+  margin-bottom: 9px;
+  color: #7de9ff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.protocol-heading h2 {
+  margin: 0;
+  color: rgba(247, 252, 255, 0.98);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  letter-spacing: -0.03em;
+}
+
+.protocol-heading p {
+  max-width: 690px;
+  margin: 10px 0 0;
+  color: rgba(213, 227, 242, 0.63);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.protocol-status {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 9px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.protocol-status-safe {
+  border: 1px solid rgba(80, 255, 184, 0.26);
+  background: rgba(80, 255, 184, 0.07);
+  color: #81ffca;
+}
+
+.protocol-status-danger {
+  border: 1px solid rgba(255, 91, 126, 0.3);
+  background: rgba(255, 91, 126, 0.08);
+  color: #ff9aae;
+}
+
+.protocol-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 14px currentColor;
+  animation: protocolStatusPulse 1.7s ease-in-out infinite;
+}
+
+.protocol-desktop-flow {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    minmax(135px, 0.85fr)
+    minmax(130px, 1.15fr)
+    minmax(120px, 0.75fr)
+    minmax(130px, 1.15fr)
+    minmax(135px, 0.85fr);
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.protocol-node {
+  position: relative;
+  z-index: 3;
+  min-height: 150px;
+  padding: 20px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+  text-align: center;
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.protocol-node-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 14px;
+  border-radius: 17px;
+  font-size: 1.45rem;
+}
+
+.protocol-node-alice .protocol-node-icon {
+  border: 1px solid rgba(78, 217, 255, 0.3);
+  background: rgba(78, 217, 255, 0.1);
+  color: #80eaff;
+  box-shadow: 0 0 25px rgba(78, 217, 255, 0.12);
+}
+
+.protocol-node-bob .protocol-node-icon {
+  border: 1px solid rgba(153, 112, 255, 0.3);
+  background: rgba(153, 112, 255, 0.1);
+  color: #c0a4ff;
+  box-shadow: 0 0 25px rgba(153, 112, 255, 0.12);
+}
+
+.protocol-node h3 {
+  margin: 0;
+  color: #f4fbff;
+  font-size: 1rem;
+}
+
+.protocol-node p {
+  margin: 8px 0 0;
+  color: rgba(212, 226, 242, 0.56);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.photon-channel {
+  position: relative;
+  min-width: 0;
+  height: 90px;
+  overflow: hidden;
+}
+
+.channel-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(72, 204, 255, 0.12),
+    rgba(72, 204, 255, 0.8),
+    rgba(139, 112, 255, 0.8),
+    rgba(139, 112, 255, 0.12)
+  );
+  box-shadow: 0 0 20px rgba(81, 205, 255, 0.35);
+}
+
+.photon-channel-danger .channel-line {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 78, 114, 0.12),
+    rgba(255, 78, 114, 0.8),
+    rgba(255, 172, 74, 0.75),
+    rgba(255, 78, 114, 0.12)
+  );
+  box-shadow: 0 0 20px rgba(255, 78, 114, 0.35);
+}
+
+.photon {
+  position: absolute;
+  top: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #8cefff;
+  box-shadow:
+    0 0 8px #8cefff,
+    0 0 22px rgba(140, 239, 255, 0.95);
+}
+
+.photon-channel-danger .photon {
+  background: #ff7996;
+  box-shadow:
+    0 0 8px #ff7996,
+    0 0 22px rgba(255, 88, 124, 0.95);
+}
+
+.channel-label {
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  width: 100%;
+  color: rgba(198, 220, 239, 0.45);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.eve-monitor {
+  position: relative;
+  z-index: 4;
+  min-height: 145px;
+  padding: 18px 14px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.eve-active {
+  border: 1px solid rgba(255, 83, 119, 0.33);
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 72, 111, 0.17),
+      transparent 55%
+    ),
+    rgba(255, 67, 104, 0.055);
+}
+
+.eve-inactive {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.025);
+  opacity: 0.62;
+}
+
+.eve-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: rgba(255, 76, 113, 0.12);
+  color: #ff8aa2;
+  font-size: 1.35rem;
+  box-shadow: 0 0 24px rgba(255, 76, 113, 0.14);
+}
+
+.eve-monitor strong {
+  display: block;
+  color: #fff2f5;
+  font-size: 0.95rem;
+}
+
+.eve-monitor span {
+  display: block;
+  margin-top: 7px;
+  color: rgba(243, 203, 212, 0.58);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.eve-beam {
+  position: absolute;
+  top: 50%;
+  left: -18%;
+  width: 136%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 83, 119, 0.85),
+    transparent
+  );
+  box-shadow: 0 0 16px rgba(255, 83, 119, 0.65);
+  animation: eveScan 1.7s ease-in-out infinite;
+}
+
+.protocol-result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.protocol-result-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.065);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.protocol-result-card span {
+  display: block;
+  color: rgba(203, 219, 237, 0.5);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.protocol-result-card strong {
+  display: block;
+  margin-top: 8px;
+  color: #f0f9ff;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.danger-text {
+  color: #ff91a8 !important;
+}
+
+.safe-text {
+  color: #79ffbe !important;
+}
+
+.security-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 18px;
+  padding: 17px;
+  border-radius: 15px;
+}
+
+.security-message > svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  font-size: 1.2rem;
+}
+
+.security-message strong {
+  color: #f7fbff;
+  font-size: 0.9rem;
+}
+
+.security-message p {
+  margin: 6px 0 0;
+  color: rgba(217, 229, 242, 0.58);
+  font-size: 0.79rem;
+  line-height: 1.55;
+}
+
+.security-message-safe {
+  border: 1px solid rgba(71, 255, 177, 0.18);
+  background: rgba(71, 255, 177, 0.045);
+  color: #78ffc0;
+}
+
+.security-message-danger {
+  border: 1px solid rgba(255, 77, 113, 0.22);
+  background: rgba(255, 77, 113, 0.05);
+  color: #ff8ca4;
+}
+
+@keyframes protocolStatusPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(0.76);
+  }
+}
+
+@keyframes eveScan {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 1050px) {
+  .protocol-desktop-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .photon-channel {
+    width: 80px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .channel-line {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(72, 204, 255, 0.12),
+      rgba(72, 204, 255, 0.8),
+      rgba(139, 112, 255, 0.8),
+      rgba(139, 112, 255, 0.12)
+    );
+  }
+
+  .photon {
+    top: 0;
+    left: calc(50% - 5px) !important;
+    animation: verticalPhoton 2.3s linear infinite;
+  }
+
+  .channel-label {
+    display: none;
+  }
+
+  .eve-beam {
+    left: 50%;
+    width: 1px;
+    height: 135%;
+    transform: translateX(-50%);
+  }
+
+  .protocol-result-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .protocol-flow {
+    padding: 21px;
+  }
+
+  .protocol-heading {
+    flex-direction: column;
+  }
+
+  .protocol-status {
+    align-self: flex-start;
+  }
+
+  .protocol-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .security-message {
+    flex-direction: column;
+  }
+}
+
+@keyframes verticalPhoton {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: calc(100% - 10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .protocol-status-dot,
+  .eve-beam,
+  .photon {
+    animation: none;
+  }
+}/* Production responsiveness fixes */
+
+.protocol-flow {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.protocol-heading > div {
+  min-width: 0;
+}
+
+.protocol-heading p,
+.protocol-node p,
+.security-message p {
+  overflow-wrap: anywhere;
+}
+
+.protocol-node,
+.eve-monitor,
+.protocol-result-card {
+  min-width: 0;
+}
+
+.protocol-node,
+.eve-monitor {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .protocol-node:hover,
+  .eve-monitor:hover {
+    transform: translateY(-3px);
+    border-color: rgba(111, 226, 255, 0.18);
+    box-shadow:
+      0 20px 48px rgba(0, 0, 0, 0.24),
+      0 0 24px rgba(72, 204, 255, 0.05);
+  }
+}
+
+@media (max-width: 1050px) {
+  .protocol-desktop-flow {
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .protocol-node {
+    width: min(100%, 520px);
+    min-height: 0;
+    margin: 0 auto;
+  }
+
+  .eve-monitor {
+    width: min(100%, 420px);
+    min-height: 0;
+    margin: 0 auto;
+  }
+
+  .photon-channel {
+    width: 70px;
+    height: 82px;
+  }
+
+  .photon-channel-danger .channel-line {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 78, 114, 0.12),
+      rgba(255, 78, 114, 0.8),
+      rgba(255, 172, 74, 0.75),
+      rgba(255, 78, 114, 0.12)
+    );
+  }
+
+  .eve-beam {
+    top: -17%;
+    left: 50%;
+    width: 1px;
+    height: 134%;
+    transform: translateX(-50%);
+    animation: eveScanVertical 1.7s ease-in-out infinite;
+  }
+}
+
+@media (max-width: 680px) {
+  .protocol-flow {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .protocol-heading {
+    gap: 16px;
+  }
+
+  .protocol-heading p {
+    font-size: 0.84rem;
+  }
+
+  .protocol-desktop-flow {
+    margin-top: 26px;
+  }
+
+  .protocol-node {
+    padding: 18px 14px;
+    border-radius: 15px;
+  }
+
+  .protocol-node-icon {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 12px;
+    border-radius: 15px;
+    font-size: 1.25rem;
+  }
+
+  .eve-monitor {
+    padding: 16px 13px;
+    border-radius: 15px;
+  }
+
+  .protocol-result-grid {
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .protocol-result-card {
+    padding: 14px;
+  }
+
+  .security-message {
+    gap: 10px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 420px) {
+  .protocol-flow {
+    padding: 18px 13px;
+  }
+
+  .protocol-kicker {
+    font-size: 0.65rem;
+    letter-spacing: 0.13em;
+  }
+
+  .protocol-heading h2 {
+    font-size: 1.25rem;
+  }
+
+  .protocol-status {
+    padding: 8px 11px;
+    font-size: 0.7rem;
+  }
+
+  .protocol-node h3 {
+    font-size: 0.92rem;
+  }
+
+  .protocol-node p {
+    font-size: 0.7rem;
+  }
+
+  .photon-channel {
+    height: 68px;
+  }
+
+  .eve-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.18rem;
+  }
+
+  .protocol-result-card strong {
+    font-size: 0.82rem;
+  }
+
+  .security-message strong {
+    font-size: 0.84rem;
+  }
+
+  .security-message p {
+    font-size: 0.74rem;
+  }
+}
+
+@keyframes eveScanVertical {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: translateX(-50%) scaleY(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .protocol-node,
+  .eve-monitor {
+    transition: none;
+  }
+}
